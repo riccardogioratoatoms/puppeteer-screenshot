@@ -19,7 +19,7 @@ async function getScreenshot(url, type, quality, fullPage, viewportWidth, viewpo
 
     const page = await browser.newPage();
     await page.goto(url);
-    await timeout(7500);
+    await timeout(5000);
     const file = await page.screenshot({ type,  quality, fullPage });
     await browser.close();
     return file;
