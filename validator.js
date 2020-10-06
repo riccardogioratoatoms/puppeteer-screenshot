@@ -5,7 +5,7 @@ function getInt(str) {
 }
 
 function getUrlFromPath(str) {
-    let url = str.slice(1);
+    let url = str;
     if (!url.startsWith('http')) {
         return 'https://' + url;
     }

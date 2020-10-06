@@ -7,5 +7,9 @@
   "dependencies": {
     "chrome-aws-lambda": "5.2.1",
     "puppeteer-core": "5.2.1"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "setup": "yarn global add vercel && vercel login && vercel dev"
   }
 }

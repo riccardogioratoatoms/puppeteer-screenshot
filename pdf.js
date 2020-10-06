@@ -21,9 +21,9 @@ module.exports = async function (req, res) {
         return;
     }
     try {
-        const { pathname = '/', query = {} } = parse(req.url, true);
-        const { type = 'png', quality, fullPage } = query;
-        const url = getUrlFromPath(pathname);
+        const { query = {} } = parse(req.url, true);
+        const { type = 'png', quality, fullPage, page } = query;
+        const url = getUrlFromPath(page);
         const qual = getInt(quality);
         let viewportWidth = parseInt(req.query.viewportWidth || '1240');
         let viewportHeight = parseInt(req.query.viewportHeight || '1754');
