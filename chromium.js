@@ -8,7 +8,8 @@ async function getScreenshot(url, type, quality, fullPage, viewportWidth, viewpo
         headless: chrome.headless,
         defaultViewport: {
             width: viewportWidth,
-            height: viewportHeight
+            height: viewportHeight,
+            deviceScaleFactor: 2
         }
     });
 
