@@ -7,6 +7,7 @@
     "routes": [
         { "src": "/", "dest": "/public/index.html" },
         { "src": "/favicon.ico", "dest": "/public/favicon.ico" },
-        { "src": "/(.+)", "dest": "/screenshot.js" }
+        { "src": "/screenshot/(.+)", "dest": "/screenshot.js" },
+        { "src": "/pdf/(.+)", "dest": "/pdf.js" }
     ]
 }
