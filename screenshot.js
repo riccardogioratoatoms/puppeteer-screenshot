@@ -25,8 +25,8 @@ module.exports = async function (req, res) {
         const { type = 'png', quality, fullPage } = query;
         const url = getUrlFromPath(pathname);
         const qual = getInt(quality);
-        let viewportWidth = parseInt(req.query.viewportWidth || '2480');
-        let viewportHeight = parseInt(req.query.viewportHeight || '3508');
+        let viewportWidth = parseInt(req.query.viewportWidth || '1240');
+        let viewportHeight = parseInt(req.query.viewportHeight || '1754');
         if (!isValidUrl(url)) {
             res.statusCode = 400;
             res.setHeader('Content-Type', 'text/html');
