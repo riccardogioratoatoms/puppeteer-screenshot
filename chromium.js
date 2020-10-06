@@ -1,6 +1,10 @@
 const chrome = require('chrome-aws-lambda');
 const puppeteer = require('puppeteer-core');
 
+async function timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
 async function getScreenshot(url, type, quality, fullPage, viewportWidth, viewportHeight) {
     const browser = await puppeteer.launch({
         args: chrome.args,
@@ -14,7 +18,8 @@ async function getScreenshot(url, type, quality, fullPage, viewportWidth, viewpo
     });
 
     const page = await browser.newPage();
-    await page.goto(url, { waitUntil: "networkidle2" });
+    await page.goto(url);
+    await timeout(8500);
     const file = await page.screenshot({ type,  quality, fullPage });
     await browser.close();
     return file;
